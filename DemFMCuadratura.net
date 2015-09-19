@@ -1,0 +1,60 @@
+* Schematics Netlist *
+
+
+
+R_R4         0 $N_0001  500  
+R_R5         0 $N_0002  500  
+R_R6         0 $N_0003  500  
+Q_Q2         $N_0005 $N_0004 $N_0002 BC547C 
+V_V2         Vcc 0 5v
+Q_Q8         $N_0004 $N_0004 $N_0001 BC547C 
+R_R11         Vcc $N_0004  4k  
+Q_Q9         $N_0006 $N_0007 $N_0005 QBF240/PLP 
+Q_Q13         $N_0008 $N_0008 $N_0009 BC557C 
+Q_Q14         $N_0010 $N_0008 $N_0011 BC557C 
+Q_Q16         $N_0012 $N_0010 $N_0013 BC547C 
+R_R25         0 $N_0013  1k  
+Q_Q17         $N_0010 $N_0010 $N_0014 BC547C 
+R_R24         0 $N_0014  1k  
+R_R29         0 $N_0015  500  
+Q_Q19         $N_0016 $N_0004 $N_0015 BC547C 
+Q_Q18         $N_0012 $N_0012 $N_0017 BC547C 
+Q_Q20         Vcc $N_0012 $N_0016 BC547C 
+R_R26         $N_0018 Vcc  1k  
+R_R19         $N_0009 Vcc  1k  
+R_R16         $N_0019 Vcc  1k  
+R_R23         $N_0011 Vcc  1k  
+Q_Q12         out1 out1 $N_0019 BC557C 
+Q_Q15         $N_0012 out1 $N_0018 BC557C 
+L_L2         Vcc $N_0020  58.26uH  
+C_C11         Vcc $N_0020  2n  
+Q_Q3         $N_0005 $N_0004 $N_0003 BC547C 
+R_R34         0 $N_0007  22k  
+Q_Q23         Vcc $N_0021 $N_0007 BC547C 
+C_C13         $N_0022 $N_0021  1000n  
+Q_Q4         $N_0023 $N_0024 $N_0005 QBF240/PLP 
+R_R37         0 $N_0024  22k  
+Q_Q24         Vcc $N_0025 $N_0024 BC547C 
+Q_Q21         Vcc Vcc $N_0026 BC547C 
+Q_Q22         Vcc $N_0020 $N_0027 BC547C 
+Q_Q26         $N_0028 $N_0028 $N_0027 BC557C 
+Q_Q6         out1 $N_0028 $N_0006 QBF240/PLP 
+Q_Q11         $N_0008 $N_0028 $N_0023 QBF240/PLP 
+R_R32         0 $N_0028  22k  
+Q_Q25         $N_0029 $N_0029 $N_0026 BC557C 
+Q_Q7         out1 $N_0029 $N_0023 QBF240/PLP 
+Q_Q10         $N_0008 $N_0029 $N_0006 QBF240/PLP 
+R_R31         0 $N_0029  22k  
+R_R35         $N_0021 Vcc  4.7k  
+R_R36         0 $N_0021  4.7k  
+R_R39         $N_0025 Vcc  4.7k  
+R_R38         0 $N_0025  4.7k  
+R_R27         $N_0012 Vcc  4.7k  
+R_R28         0 $N_0017  4.7k  
+C_C10         0 $N_0030  47n  
+R_R30         $N_0016 $N_0030  1k  
+C_C12         $N_0020 $N_0007  100p  
+R_R33         Vcc $N_0020  1k  
+C_C14         0 $N_0012  1n  
+V_V1         $N_0022 0  AC 1
++SFFM 0 1 455k 15 1k

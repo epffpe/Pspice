@@ -1,0 +1,4 @@
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\diode.lib", offset=19469, size=330
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\pwrmos.lib", offset=57483, size=335
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\ebipolar.lib", offset=7466, size=387
+ lib="C:\Program Files\Orcad\Capture\Library\PSpice\anl_misc.lib", offset=11693, size=2690

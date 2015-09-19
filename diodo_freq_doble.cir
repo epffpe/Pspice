@@ -1,0 +1,22 @@
+* D:\Designs\Pspice\diodo_freq_doble.sch
+
+* Schematics Version 9.2
+* Sun Jun 07 20:11:15 2009
+
+
+
+** Analysis setup **
+.tran 0ns 1000us 0 20n
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "diodo_freq_doble.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

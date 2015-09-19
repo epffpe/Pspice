@@ -1,0 +1,21 @@
+* D:\Designs\Pspice\bfr.sch
+
+* Schematics Version 9.2
+* Wed Mar 04 14:39:47 2009
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "bfr.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

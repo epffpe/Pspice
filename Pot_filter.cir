@@ -1,0 +1,22 @@
+* D:\Designs\Pspice\Pot_filter.sch
+
+* Schematics Version 9.2
+* Thu May 14 11:20:29 2009
+
+
+
+** Analysis setup **
+.ac DEC 1001 10 100k
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Pot_filter.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

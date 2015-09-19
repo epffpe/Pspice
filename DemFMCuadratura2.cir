@@ -1,0 +1,22 @@
+* D:\Designs\Pspice\DemFMCuadratura2.sch
+
+* Schematics Version 9.2
+* Wed Jan 07 04:28:07 2009
+
+
+
+** Analysis setup **
+.tran 0ns 2ms 0.2m 500n
+.OP 
+
+
+* From [PSPICE NETLIST] section of D:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "DemFMCuadratura2.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

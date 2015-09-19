@@ -1,0 +1,28 @@
+* D:\Designs\Pspice\prueba_salida.sch
+
+* Schematics Version 9.2
+* Wed Dec 17 19:14:44 2008
+
+
+.PARAM         Lp=100u Ls=10u 
+.PARAM         Lp3=28.8u Ls3=5u cap2=680p
+.PARAM         Lp1=10u Ls1=10u res=1k
+.PARAM         Lp2=3.6u Ls2=5u cap=68p
+
+** Analysis setup **
+.ac DEC 1001 1meg 30meg
+.STEP  PARAM cap LIST 
++ 10p 68p
+.OP 
+
+
+* From [PSPICE NETLIST] section of D:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "prueba_salida.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

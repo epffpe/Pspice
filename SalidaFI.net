@@ -1,0 +1,48 @@
+* Schematics Netlist *
+
+
+
+R_R6         $N_0001 Vcc  4.7k  
+R_R8         0 $N_0001  4.7k  
+R_RL2         0 $N_0002  50  
+L_L2         $N_0003 $N_0002  0.19uH  
+C_C6         $N_0003 0  1n  
+C_C7         $N_0002 0  1n  
+V_V1         Vcc 0 5V
+C_C3         0 $N_0004  10n  
+R_R10         $N_0005 0  100meg  
+R_R12         $N_0006 $N_0005  25  
+C_C8         $N_0007 $N_0001  10n  
+C_C4         $N_0008 0  10n  
+R_R11         $N_0010 $N_0009  1k  
+R_R3         $N_0011 Vcc  1k  
+R_R4         $N_0011 0  4.7k  
+C_C9         0 $N_0011  100n  
+R_R1         Vcc $N_0012  1k  
+R_R7         0 $N_0013  1.7k  
+X_TX2    $N_0005 $N_0004 $N_0009 $N_0007 SalidaFI_TX2 
+R_R15         $N_0013 $N_0014  10k  
+C_C1         0 $N_0012  100n  
+Q_Q9         $N_0012 $N_0012 0 BC547C 
+L_L1         $N_0008 $N_0012  10uH  
+R_R5         0 $N_0015  250  
+C_C5         0 $N_0015  1000p  
+Q_Q13         Vcc $N_0001 $N_0013 QBC547B/PLP 
+Q_Q12         $N_0016 $N_0014 $N_0015 QBC547B/PLP 
+X_TX1         $N_0017 $N_0016 $N_0018 $N_0008 $N_0019 XFRM_LIN/CT-SEC PARAMS:
++  Lp_value=1uh Ls1_value=100nh Ls2_value=100nh Coupling=0.99 Rp_value=0.25
++  Rs_value=0.25
+Q_Q15         $N_0020 $N_0018 0 QBC547C/PLP 
+Q_Q16         $N_0021 $N_0019 0 QBC547C/PLP 
+R_R2         $N_0017 Vcc  1  
+X_TX3         $N_0020 Vcc $N_0021 $N_0003 0 XFRM_LIN/CT-PRI PARAMS:
++  Lp1_value=1uh Lp2_value=1uh Ls_value=0.2uh Coupling=0.99 Rp_value=0.25
++  Rs_value=0.25
+V_V3         $N_0010 $N_0006  AC 1
++SIN 0 10m 16.3meg 0 0 0
+
+.subckt SalidaFI_TX2 1 2 3 4  
+K_TX2         L1_TX2 L2_TX2 1
+L1_TX2         1 2 10uH
+L2_TX2         3 4 10uH
+.ends SalidaFI_TX2

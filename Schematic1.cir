@@ -1,0 +1,21 @@
+* D:\Designs\Pspice\Schematic1.sch
+
+* Schematics Version 9.2
+* Mon Mar 16 20:29:56 2009
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Schematic1.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

@@ -1,0 +1,23 @@
+* D:\Designs\Pspice\Superdiodo.sch
+
+* Schematics Version 9.2
+* Sun Jun 07 21:06:19 2009
+
+
+.PARAM         in=10 
+
+** Analysis setup **
+.tran 0ns 5ms 0 100n
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Superdiodo.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

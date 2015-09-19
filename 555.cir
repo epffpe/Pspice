@@ -1,0 +1,23 @@
+* D:\Designs\Pspice\555.sch
+
+* Schematics Version 9.2
+* Thu May 14 16:34:07 2009
+
+
+.PARAM         cond=100n cond2=6u 
+
+** Analysis setup **
+.tran 20ns 10000us 400u 50ns
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "555.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

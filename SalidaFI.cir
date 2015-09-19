@@ -1,0 +1,23 @@
+* D:\Designs\Pspice\SalidaFI.sch
+
+* Schematics Version 9.2
+* Sun Dec 14 17:12:23 2008
+
+
+
+** Analysis setup **
+.ac LIN 1001 1meg 30meg
+.tran 0ns 10us 0 1n
+.OP 
+
+
+* From [PSPICE NETLIST] section of D:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "SalidaFI.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

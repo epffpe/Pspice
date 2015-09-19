@@ -1,0 +1,74 @@
+* Schematics Netlist *
+
+
+
+R_R5         Vcc $N_0001  4k  
+R_R1         0 $N_0002  500  
+Q_Q9         $N_0001 $N_0001 $N_0002 BC547C 
+R_R2         0 $N_0003  500  
+R_R3         0 $N_0004  500  
+Q_Q4         $N_0005 $N_0001 $N_0003 BC547C 
+Q_Q5         $N_0006 $N_0001 $N_0004 BC547C 
+R_R4         $N_0006 $N_0005  500  
+R_R17         0 $N_0007  9.4k  
+R_R7         $N_0009 $N_0008  4.7k  
+R_R16         $N_0007 Vcc  4.7k  
+R_R6         $N_0008 Vcc  9.4k  
+R_R8         $N_0009 0  2.35k  
+R_R12         $N_0010 0  2.35k  
+C_C1         0 $N_0007  1u  
+R_R13         $N_0010 MOD  4.7k  
+R_R14         MOD Vcc  9.4k  
+Q_Q12         $N_0011 $N_0008 $N_0005 QBF240/PLP 
+Q_Q15         $N_0012 MOD $N_0006 QBF240/PLP 
+Q_Q13         out2 $N_0007 $N_0011 QBF240/PLP 
+Q_Q14         out2 OL $N_0012 QBF240/PLP 
+Q_Q16         out1 $N_0007 $N_0012 QBF240/PLP 
+Q_Q17         out1 OL $N_0011 QBF240/PLP 
+R_R19         $N_0014 $N_0013  50  
+R_R18         $N_0016 $N_0015  50  
+V_V4         $N_0016 0  AC 0
++SIN 0 30m 16Meg 0 0 0
+C_C3         MOD $N_0013  100u  
+C_C2         OL $N_0015  1u  
+C_C31         0 $N_0017  10n  
+R_R42         $N_0018 Vcc  4.7k  
+R_R43         0 $N_0018  4.7k  
+X_TX11    out2 $N_0017 out1 $N_0019 ModuladorAM_TX11 
+R_R27         Vcc $N_0020  1k  
+V_V5         $N_0014 0  AC 0
++SIN 0 200m 10k 0 0 0
+C_C28         $N_0019 $N_0018  10n  
+Q_Q35         Vcc $N_0018 $N_0021 QBC547C/PLP 
+V_V1         Vcc 0 5v
+R_R44         0 $N_0021  2k  
+C_C29         0 $N_0022  1000p  
+R_R54         0 $N_0022  250  
+L_L5         $N_0023 $N_0020  10uH  
+X_TX6         $N_0024 $N_0025 $N_0026 $N_0023 $N_0027 XFRM_LIN/CT-SEC PARAMS:
++  Lp_value=1uh Ls1_value=0.1uh Ls2_value=0.1uh Coupling=0.99 Rp_value=0.25
++  Rs_value=0.25
+C_C32         $N_0023 0  10n  
+R_RL2         0 $N_0028  50  
+L_L10         $N_0029 $N_0028  0.19uH  
+C_C33         $N_0029 0  1n  
+C_C35         $N_0028 0  1n  
+Q_Q37         $N_0030 $N_0026 0 QBC547C/PLP 
+Q_Q38         $N_0031 $N_0027 0 QBC547C/PLP 
+R_R50         $N_0024 Vcc  1  
+C_C13         0 $N_0020  100n  
+Q_Q39         $N_0025 $N_0032 $N_0022 QBC547B/PLP 
+R_Pot1         $N_0021 $N_0032  10k  
+Q_Q40         $N_0020 $N_0020 0 QBC547C/PLP 
+L_L8         Vcc out1  330uH  
+L_L9         out2 Vcc  330uH  
+X_TX7         $N_0030 Vcc $N_0031 $N_0029 0 XFRM_LIN/CT-PRI PARAMS:
++  Lp1_value=1uh Lp2_value=1uh Ls_value=0.2uh Coupling=0.99 Rp_value=0.25
++  Rs_value=0.25
+R_R15         OL $N_0007  2k  
+
+.subckt ModuladorAM_TX11 1 2 3 4  
+K_TX11         L1_TX11 L2_TX11 1
+L1_TX11         1 2 100uH
+L2_TX11         3 4 100uH
+.ends ModuladorAM_TX11

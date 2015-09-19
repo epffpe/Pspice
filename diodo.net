@@ -1,0 +1,7 @@
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 {in}
+D_D1         $N_0001 0 OA90-G 
+D_D2         $N_0001 0 D1N4148 

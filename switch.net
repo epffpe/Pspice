@@ -1,0 +1,11 @@
+* Schematics Netlist *
+
+
+
+R_R1         $N_0002 $N_0001  1.8k  
+V_V2         $N_0002 0 DC 0 
++PULSE 0 8 0.4m 1u 1u 0.4m 1m
+C_C1         0 $N_0001  47n  
+Q_Q1         $N_0003 $N_0001 0 Q2N2222A/ZTX 
+V_V1         $N_0004 0 8V
+L_L1         $N_0004 $N_0003  10mH  

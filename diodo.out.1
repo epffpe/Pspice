@@ -1,0 +1,130 @@
+
+**** 06/07/09 19:15:13 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * D:\Designs\Pspice\diodo.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Sun Jun 07 19:15:13 2009
+
+
+.PARAM         in=0 
+
+** Analysis setup **
+.DC LIN PARAM in 0V 0.5V 10uV 
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "diodo.net"
+
+
+
+**** INCLUDING diodo.net ****
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 {in}
+D_D1         $N_0001 0 OA90-G 
+
+**** RESUMING diodo.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 06/07/09 19:15:13 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * D:\Designs\Pspice\diodo.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               OA90-G          
+          IS   54.120000E-06 
+           N    4.209        
+         ISR   13.540000E-21 
+          NR    4.62         
+          BV   22.5          
+         IBV  100.000000E-06 
+          RS   42.72         
+          TT    5.000000E-09 
+         CJO    1.000000E-12 
+          VJ     .75         
+           M     .3333       
+
+
+**** 06/07/09 19:15:13 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * D:\Designs\Pspice\diodo.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         4.564E-21
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 06/07/09 19:15:13 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * D:\Designs\Pspice\diodo.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D1      
+MODEL        OA90-G    
+ID           0.00E+00 
+VD           0.00E+00 
+REQ          2.01E+03 
+CAP          3.49E-12 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            3.50
+

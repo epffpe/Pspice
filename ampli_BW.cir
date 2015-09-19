@@ -1,0 +1,22 @@
+* D:\Designs\Pspice\ampli_BW.sch
+
+* Schematics Version 9.2
+* Thu Feb 26 23:40:21 2009
+
+
+
+** Analysis setup **
+.ac DEC 101 1meg 500meg
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "ampli_BW.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

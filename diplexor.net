@@ -1,0 +1,26 @@
+* Schematics Netlist *
+
+
+
+L_L1         $N_0001 $N_0002  4uH  
+C_C2         0 $N_0002  13.145n  
+C_C1         0 $N_0001  10.95n  
+L_L3         $N_0003 $N_0004  253.3uH  
+R_R1         $N_0005 $N_0002  50  
+D_D1         $N_0004 0 D1N4148 
+C_C3         $N_0004 $N_0001  0.1n  
+D_D2         0 $N_0004 D1N4148 
+R_R2         0 $N_0006  1k  
+X_TX2    $N_0003 $N_0007 $N_0006 0 diplexor_TX2 
+C_C4         0 $N_0006  25.33n  
+V_V3         $N_0005 0 DC 0 AC 1
++SIN 0 0 1Meg 0 0 0
+V_V4         $N_0007 0 0V
+I_I1         $N_0001 0 DC 0 AC 0
++SIN 0 0.1 1Meg 0 0 0
+
+.subckt diplexor_TX2 1 2 3 4  
+K_TX2         L1_TX2 L2_TX2 1
+L1_TX2         1 2 1uH
+L2_TX2         3 4 1uH
+.ends diplexor_TX2

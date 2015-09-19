@@ -1,0 +1,22 @@
+* D:\Designs\Pspice\Ceramico.sch
+
+* Schematics Version 9.2
+* Fri Jun 05 11:29:45 2009
+
+
+
+** Analysis setup **
+.ac LIN 1001 444k 448k
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Ceramico.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

@@ -1,0 +1,25 @@
+* D:\Designs\Pspice\ModuladorAM2.sch
+
+* Schematics Version 9.2
+* Tue Dec 16 21:38:47 2008
+
+
+.PARAM         Lp2=28.8u Ls2=5u 
+.PARAM         Lp1=28.8u Ls1=5u 
+
+** Analysis setup **
+.tran 0ns 90us 1u 1n
+.OPTIONS RELTOL=0.0001
+.OP 
+
+
+* From [PSPICE NETLIST] section of D:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "ModuladorAM2.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

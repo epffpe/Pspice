@@ -1,0 +1,62 @@
+* Schematics Netlist *
+
+
+
+Q_Q1         Vcc $N_0001 $N_0002 QBC547C/PLP 
+R_R7         0 $N_0003  500  
+R_R8         0 $N_0004  500  
+R_R9         0 $N_0005  500  
+Q_Q6         $N_0007 $N_0006 $N_0004 BC547C 
+Q_Q7         $N_0008 $N_0006 $N_0005 BC547C 
+Q_Q9         $N_0009 MOD $N_0008 QBF240/PLP 
+V_V3         Vcc 0 5v
+Q_Q3         Vcc $N_0010 $N_0011 QBC547C/PLP 
+C_C2         0 $N_0012  100n  
+Q_Q10         out1 $N_0013 $N_0014 QBF240/PLP 
+C_C5         0 $N_0013  1u  
+R_R12         0 $N_0013  9.4k  
+R_R14         $N_0013 Vcc  4.7k  
+Q_Q11         out1 OL $N_0009 QBF240/PLP 
+R_R3         $N_0011 0  2k  
+R_RL2         0 $N_0015  50  
+R_R4         0 $N_0002  2k  
+Q_Q5         $N_0006 $N_0006 $N_0003 BC547C 
+R_R6         Vcc $N_0006  4k  
+C_C6         MOD $N_0016  100u  
+R_R19         MOD Vcc  9.4k  
+R_R15         $N_0017 Vcc  9.4k  
+C_C7         OL $N_0018  100n  
+C_C15         0 $N_0017  100u  
+R_R13         $N_0019 $N_0017  4.7k  
+R_R18         $N_0020 MOD  4.7k  
+Q_Q8         $N_0014 $N_0017 $N_0007 QBF240/PLP 
+C_C13         0 Vcc  100n  
+R_R31         out1 Vcc  1k  
+R_R33         $N_0013 OL  2k  
+R_R5         0 $N_0012  100  
+V_V2         $N_0021 0  AC 0.1
++SIN 0 100m 10k 0 0 0
+R_R20         $N_0021 $N_0016  100  
+Q_Q13         out2 OL $N_0014 QBF240/PLP 
+Q_Q12         out2 $N_0013 $N_0009 QBF240/PLP 
+R_R32         out2 Vcc  1k  
+R_R10         $N_0008 $N_0007  500  
+V_V1         $N_0022 0  AC 0.1
++SIN 0 20m 10Meg 0 0 0
+R_R2         0 $N_0023  4.7k  
+C_C1         $N_0023 0  100n  
+R_R1         $N_0023 Vcc  4.7k  
+X_TX4         out2 out1 $N_0001 $N_0023 $N_0010 XFRM_LIN/CT-SEC PARAMS:
++  Lp_value={Lp1} Ls1_value={Ls1} Ls2_value={Ls1} Coupling=0.99 Rp_value=0.25
++  Rs_value=0.25
+R_R21         $N_0022 $N_0018  50  
+R_POT_AM2         $N_0020 0  1.35k  
+R_Pot_AM         $N_0019 0  3.35k  
+C_C3         $N_0024 0  1n  
+C_C4         $N_0015 0  1n  
+L_L1         $N_0024 $N_0015  191nH  
+C_C14         Vcc 0  100n  
+Q_Q4         $N_0025 $N_0002 $N_0012 QBC547C/PLP 
+Q_Q2         $N_0026 $N_0011 $N_0012 QBC547C/PLP 
+X_TX1         $N_0025 Vcc $N_0026 $N_0024 0 XFRM_LIN/CT-PRI PARAMS: Lp1_value=
++ {Lp2} Lp2_value={Lp2} Ls_value={Ls2} Coupling=0.99 Rp_value=0.25 Rs_value=0.25

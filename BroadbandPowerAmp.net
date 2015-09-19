@@ -1,0 +1,28 @@
+* Schematics Netlist *
+
+
+
+R_R6         0 $N_0001  220  
+R_R2         $N_0001 $N_0002  360  
+R_R1         $N_0002 $N_0003  470  
+V_V1         $N_0004 0 12V
+C_C1         0 $N_0004  1n  
+R_R3         $N_0006 $N_0005  470  
+R_R4         $N_0008 $N_0007  4.7  
+R_R5         0 $N_0008  15  
+C_C5         $N_0009 $N_0003  0.1u  
+C_C2         0 $N_0008  330n  
+V_V3         $N_0010 0  AC 1
++SIN 0 1 10meg 0 0 0
+X_TX1    $N_0003 $N_0005 $N_0004 $N_0003 BroadbandPowerAmp_TX1 
+C_C6         0 $N_0006  3p  
+C_C3         $N_0003 $N_0002  10n  
+Q_Q3         $N_0005 $N_0001 $N_0007 BD239
+C_C4         $N_0001 $N_0010  0.1u  
+R_R7         0 $N_0009  {res}  
+
+.subckt BroadbandPowerAmp_TX1 1 2 3 4  
+K_TX1         L1_TX1 L2_TX1 1
+L1_TX1         1 2 5uH
+L2_TX1         3 4 5uH
+.ends BroadbandPowerAmp_TX1

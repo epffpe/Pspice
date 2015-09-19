@@ -1,0 +1,22 @@
+* D:\Designs\Pspice\red_pi.sch
+
+* Schematics Version 9.2
+* Sat Nov 29 21:41:52 2008
+
+
+
+** Analysis setup **
+.ac LIN 1001 1meg 100meg
+.OP 
+
+
+* From [PSPICE NETLIST] section of D:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "red_pi.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

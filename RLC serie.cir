@@ -1,0 +1,22 @@
+* D:\Designs\Pspice\RLC serie.sch
+
+* Schematics Version 9.2
+* Fri Jun 05 11:24:48 2009
+
+
+
+** Analysis setup **
+.ac LIN 10001 3.98meg 4.02meg
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "RLC serie.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

@@ -1,0 +1,81 @@
+* Schematics Netlist *
+
+
+
+R_R1         0 $N_0001  500  
+Q_Q1         $N_0002 $N_0002 $N_0001 BC547C 
+R_R2         0 $N_0003  500  
+R_R3         0 $N_0004  500  
+Q_Q2         $N_0005 $N_0002 $N_0003 BC547C 
+Q_Q3         $N_0006 $N_0002 $N_0004 BC547C 
+R_R4         $N_0006 $N_0005  500  
+R_R5         $N_0007 Vcc  9.4k  
+R_R7         $N_0008 MOD  4.7k  
+R_R8         MOD Vcc  9.4k  
+Q_Q4         $N_0009 $N_0007 $N_0005 QBF240/PLP 
+Q_Q5         $N_0010 MOD $N_0006 QBF240/PLP 
+R_R9         $N_0012 $N_0011  50  
+C_C1         MOD $N_0011  100u  
+V_V1         Vcc 0 5v
+C_C2         OL $N_0013  100n  
+R_R10         Vcc $N_0002  4k  
+R_R12         $N_0014 $N_0007  4.7k  
+C_C3         0 $N_0007  100u  
+Q_Q6         out2 $N_0015 $N_0009 QBF240/PLP 
+Q_Q7         out2 OL $N_0010 QBF240/PLP 
+R_R15         $N_0016 $N_0013  50  
+R_R16         out2 Vcc  1k  
+R_R17         $N_0015 OL  1k  
+Q_Q9         out1 $N_0015 $N_0010 QBF240/PLP 
+Q_Q10         out1 OL $N_0009 QBF240/PLP 
+V_V3         $N_0016 0  AC 0.1
++SIN 0 20m 16Meg 0 0 0
+C_C7         $N_0017 $N_0018  {cap}  
+C_C8         $N_0019 $N_0020  {cap}  
+L_L3         $N_0021 $N_0020  330u  
+L_L4         $N_0018 $N_0021  330u  
+Q_Q14         $N_0021 $N_0021 0 QBC547C/PLP 
+Q_Q15         $N_0022 $N_0023 0 QBC547C/PLP 
+R_R23         $N_0023 0  10k  
+R_R24         0 $N_0020  10k  
+R_R25         $N_0018 0  10k  
+X_TX3    out1 out2 $N_0019 $N_0017 ModuladorAM4_TX3 
+R_R27         0 $N_0024  10k  
+Q_Q16         $N_0025 $N_0024 0 QBC547C/PLP 
+C_C10         $N_0026 $N_0024  {cap}  
+R_R14         $N_0015 Vcc  4.7k  
+R_R13         0 $N_0015  9.4k  
+C_C4         0 $N_0015  1u  
+R_R18         out1 Vcc  1k  
+L_L5         $N_0023 $N_0027  330u  
+L_L6         $N_0027 $N_0024  330u  
+Q_Q17         $N_0027 $N_0027 0 QBC547C/PLP 
+R_RL2         0 $N_0028  50  
+C_C11         0 $N_0029  138p  
+C_C12         0 $N_0028  170p  
+L_L7         $N_0029 $N_0028  446nH  
+R_R32         $N_0026 $N_0024  1k  
+R_R29         $N_0019 $N_0020  1k  
+R_R30         $N_0017 $N_0018  1k  
+R_R26         $N_0021 Vcc  2k  
+R_R28         $N_0027 Vcc  2k  
+X_TX4         $N_0025 Vcc $N_0022 $N_0029 0 XFRM_LIN/CT-PRI PARAMS: Lp1_value=
++ {Lp2} Lp2_value={Lp2} Ls_value={Ls2} Coupling=0.99 Rp_value=0.25 Rs_value=0.25
+R_R6         $N_0008 0  1.5k  
+R_R11         $N_0014 0  3.2k  
+V_V2         $N_0012 0  AC 0.1
++SIN 0 200m 10k 0 0 0
+C_C9         $N_0030 $N_0023  {cap}  
+R_R31         $N_0030 $N_0023  1k  
+Q_Q13         $N_0031 $N_0020 0 QBC547C/PLP 
+Q_Q12         $N_0032 $N_0018 0 QBC547C/PLP 
+X_TX2         $N_0031 Vcc $N_0032 $N_0026 $N_0030 XFRM_LIN/CT-PRI PARAMS:
++  Lp1_value={Lp2} Lp2_value={Lp2} Ls_value={Ls2} Coupling=0.99 Rp_value=0.25
++  Rs_value=0.25
+C_C13         $N_0032 $N_0031  8p  
+
+.subckt ModuladorAM4_TX3 1 2 3 4  
+K_TX3         L1_TX3 L2_TX3 1
+L1_TX3         1 2 {Lp1}
+L2_TX3         3 4 {Ls1}
+.ends ModuladorAM4_TX3

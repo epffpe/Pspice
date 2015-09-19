@@ -1,0 +1,9 @@
+* Schematics Netlist *
+
+
+
+I_I1         in 0 DC 0A AC 1A 
+R_R1         0 out  50  
+L_L1         in out  150nH  
+C_C2         0 out  480p  
+C_C1         0 in  410p  

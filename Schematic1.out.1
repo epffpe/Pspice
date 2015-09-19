@@ -1,0 +1,179 @@
+
+**** 03/16/09 20:02:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * D:\Designs\Pspice\Schematic1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Mon Mar 16 20:02:41 2009
+
+
+
+** Analysis setup **
+.ac LIN 1001 10k 100K
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Schematic1.net"
+
+
+
+**** INCLUDING Schematic1.net ****
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 10V
+R_R2         0 $N_0002  50k  
+I_I1         $N_0003 0 DC 10mA  
+C_C1         $N_0003 0  100u  
+C_C2         $N_0004 $N_0002  100u  
+R_R1         $N_0002 $N_0001  50k  
+V_V2         $N_0005 0 DC 0V AC 1V 
+R_R4         $N_0006 $N_0001  50  
+R_R3         $N_0005 $N_0007  50  
+L_L1         $N_0007 $N_0004  489uH  
+C_C6         0 $N_0004  11.25n  
+C_C5         0 $N_0007  24.36n  
+Q_Q1         $N_0006 $N_0002 $N_0003 BC547C 
+
+**** RESUMING Schematic1.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 03/16/09 20:02:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * D:\Designs\Pspice\Schematic1.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               BC547C          
+               NPN             
+          IS    7.049000E-15 
+          BF  543.1          
+          NF    1            
+         VAF   24.76         
+         IKF     .09496      
+         ISE   78.170000E-15 
+          NE    1.679        
+          BR    1            
+          NR    1            
+         IKR    3.321        
+         ISC   27.510000E-15 
+          NC    1.775        
+          NK     .5381       
+          RC     .9706       
+         CJE   11.500000E-12 
+         VJE     .5          
+         MJE     .6715       
+         CJC    5.250000E-12 
+         VJC     .5697       
+         MJC     .3147       
+          TF  410.700000E-12 
+         XTF   26.19         
+         VTF   10            
+         ITF    1.12         
+          TR   10.000000E-09 
+         XTB    1.5          
+          CN    2.42         
+           D     .87         
+
+
+**** 03/16/09 20:02:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * D:\Designs\Pspice\Schematic1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)   10.0000                   ($N_0002)    4.5484                       
+
+($N_0003)    3.8271                   ($N_0004)    0.0000                       
+
+($N_0005)    0.0000                   ($N_0006)    9.5009                       
+
+($N_0007)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.009E-02
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   1.01E-01  WATTS
+
+
+**** 03/16/09 20:02:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ * D:\Designs\Pspice\Schematic1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q1      
+MODEL        BC547C    
+IB           1.81E-05 
+IC           9.98E-03 
+VBE          7.21E-01 
+VBC         -4.95E+00 
+VCE          5.67E+00 
+BETADC       5.53E+02 
+GM           3.54E-01 
+RPI          1.47E+03 
+RX           0.00E+00 
+RO           2.98E+03 
+CBE          1.88E-10 
+CBC          2.57E-12 
+CJS          0.00E+00 
+BETAAC       5.22E+02 
+CBX/CBX2     0.00E+00 
+FT/FT2       2.96E+08 
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .09
+

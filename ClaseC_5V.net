@@ -1,0 +1,29 @@
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 5V
+L_L1         $N_0002 $N_0003  50uH  
+Q_Q1         $N_0002 $N_0004 0 BC547B 
+R_R1         0 $N_0005  50  
+C_C1         $N_0002 $N_0006  1u  
+R_R3         $N_0001 $N_0003  10  
+X_TX1    $N_0007 0 $N_0004 0 ClaseC_5V_TX1 
+C_C4         0 $N_0007  28p  
+I_I1         $N_0008 0 DC 0A AC 1A 
+R_R2         $N_0009 $N_0007  100  
+V_V2         $N_0009 0 DC 0 AC 1
++SIN 0 2 30Meg 0 0 0
+R_R5         0 $N_0010  50  
+C_C7         0 $N_0008  212p  
+C_C8         0 $N_0010  325p  
+L_L4         $N_0008 $N_0010  205.7n  
+C_C2         0 $N_0006  85p  
+C_C3         0 $N_0005  106p  
+L_L2         $N_0006 $N_0005  398n  
+
+.subckt ClaseC_5V_TX1 1 2 3 4  
+K_TX1         L1_TX1 L2_TX1 1
+L1_TX1         1 2 1uH
+L2_TX1         3 4 1uH
+.ends ClaseC_5V_TX1

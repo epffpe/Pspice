@@ -1,0 +1,15 @@
+* Schematics Netlist *
+
+
+
+R_R1         $N_0002 $N_0001  50  
+C_C1         $N_0001 $N_0003  10u  
+L_L1         0 $N_0003  100uH  
+V_V1         $N_0002 0 DC 0 
++SIN 0 {in} 0.6meg 0 0 0
+V_V3         vcc 0 12V
+D_D11         $N_0004 $N_0003 OA90-G 
+J_J1         $N_0005 $N_0004 0 BF245A 
+R_R10         $N_0005 vcc  3k  
+C_C2         0 $N_0004  500n  
+R_R14         0 $N_0004  100k  

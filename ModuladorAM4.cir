@@ -1,0 +1,25 @@
+* D:\Designs\Pspice\ModuladorAM4.sch
+
+* Schematics Version 9.2
+* Tue Dec 16 21:17:49 2008
+
+
+.PARAM         Lp3=28.8u Ls3=5u cap2=680p
+.PARAM         Lp1=10u Ls1=10u res=1k
+.PARAM         Lp2=3.6u Ls2=10u cap=68p
+
+** Analysis setup **
+.ac DEC 1001 1meg 30meg
+.OP 
+
+
+* From [PSPICE NETLIST] section of D:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "ModuladorAM4.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

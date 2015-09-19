@@ -1,0 +1,22 @@
+* D:\Designs\Pspice\Oscilador_diff.sch
+
+* Schematics Version 9.2
+* Wed Dec 03 14:33:44 2008
+
+
+
+** Analysis setup **
+.tran 0ns 100ns 0 0.01n
+.OP 
+
+
+* From [PSPICE NETLIST] section of D:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Oscilador_diff.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

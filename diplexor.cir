@@ -1,0 +1,22 @@
+* D:\Designs\Pspice\diplexor.sch
+
+* Schematics Version 9.2
+* Sun Jun 14 01:57:16 2009
+
+
+
+** Analysis setup **
+.tran 0ns 225us 10u 20ns
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "diplexor.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

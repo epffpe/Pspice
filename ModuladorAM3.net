@@ -1,0 +1,65 @@
+* Schematics Netlist *
+
+
+
+R_R28         0 $N_0001  500  
+Q_Q16         $N_0002 $N_0002 $N_0001 BC547C 
+R_R29         0 $N_0003  500  
+R_R30         0 $N_0004  500  
+Q_Q17         $N_0005 $N_0002 $N_0003 BC547C 
+Q_Q18         $N_0006 $N_0002 $N_0004 BC547C 
+R_R31         $N_0006 $N_0005  500  
+R_R32         $N_0007 Vcc  9.4k  
+R_R33         $N_0008 0  2.35k  
+R_R34         $N_0008 MOD  4.7k  
+R_R35         MOD Vcc  9.4k  
+Q_Q19         $N_0009 $N_0007 $N_0005 QBF240/PLP 
+Q_Q20         $N_0010 MOD $N_0006 QBF240/PLP 
+R_R36         $N_0012 $N_0011  50  
+C_C11         MOD $N_0011  100u  
+V_V4         Vcc 0 5v
+C_C12         OL $N_0013  100n  
+R_R37         Vcc $N_0002  4k  
+R_R38         $N_0014 0  2.35k  
+R_R39         $N_0014 $N_0007  4.7k  
+C_C14         0 $N_0007  100u  
+Q_Q24         out2 $N_0015 $N_0009 QBF240/PLP 
+C_C16         0 $N_0015  1u  
+R_R40         0 $N_0015  9.4k  
+R_R41         $N_0015 Vcc  4.7k  
+Q_Q25         out2 OL $N_0010 QBF240/PLP 
+R_R42         $N_0016 $N_0013  50  
+R_R44         out2 Vcc  1k  
+R_R45         $N_0015 OL  1k  
+Q_Q21         $N_0017 $N_0018 0 QBC547C/PLP 
+Q_Q14         $N_0019 $N_0020 0 QBC547C/PLP 
+C_C19         $N_0021 $N_0018  {cap}  
+C_C20         $N_0022 $N_0020  {cap}  
+R_R43         out1 Vcc  1k  
+Q_Q23         out1 $N_0015 $N_0010 QBF240/PLP 
+Q_Q26         out1 OL $N_0009 QBF240/PLP 
+X_TX6    out1 out2 $N_0022 $N_0021 ModuladorAM3_TX6 
+R_R51         0 $N_0020  10k  
+R_R52         $N_0018 0  10k  
+R_R54         $N_0021 $N_0018  1k  
+R_R53         $N_0022 $N_0020  1k  
+V_V6         $N_0012 0  AC 0.1
++SIN 0 400m 10k 0 0 0
+L_L10         $N_0023 $N_0020  330u  
+L_L9         $N_0018 $N_0023  330u  
+Q_Q27         $N_0023 $N_0023 0 QBC547C/PLP 
+R_R50         $N_0023 Vcc  2k  
+X_TX5         $N_0019 Vcc $N_0017 $N_0024 0 XFRM_LIN/CT-PRI PARAMS: Lp1_value=
++ {Lp2} Lp2_value={Lp2} Ls_value={Ls2} Coupling=0.99 Rp_value=0.25 Rs_value=0.25
+R_RL2         0 $N_0025  50  
+C_C21         0 $N_0024  138p  
+C_C22         0 $N_0025  170p  
+L_L11         $N_0024 $N_0025  446nH  
+V_V5         $N_0016 0  AC 0.1
++SIN 0 20m 1.6Meg 0 0 0
+
+.subckt ModuladorAM3_TX6 1 2 3 4  
+K_TX6         L1_TX6 L2_TX6 1
+L1_TX6         1 2 {Lp1}
+L2_TX6         3 4 {Ls1}
+.ends ModuladorAM3_TX6

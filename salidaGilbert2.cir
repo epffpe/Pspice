@@ -1,0 +1,25 @@
+* D:\Designs\Pspice\salidaGilbert2.sch
+
+* Schematics Version 9.2
+* Mon Dec 15 13:01:45 2008
+
+
+.PARAM         Ls=0.1u 
+
+** Analysis setup **
+.ac DEC 1001 1meg 30meg
+.STEP  PARAM Ls LIST 
++ 40u 50u 60u
+.OP 
+
+
+* From [PSPICE NETLIST] section of D:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "salidaGilbert2.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

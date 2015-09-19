@@ -1,0 +1,21 @@
+* D:\Designs\Pspice\butter.sch
+
+* Schematics Version 9.2
+* Mon Nov 24 00:45:05 2008
+
+
+
+** Analysis setup **
+.ac LIN 101 0.01 5
+
+
+* From [PSPICE NETLIST] section of D:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "butter.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

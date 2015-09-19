@@ -1,0 +1,25 @@
+* D:\Designs\Pspice\BroadbandPowerAmp.sch
+
+* Schematics Version 9.2
+* Sun Nov 30 15:42:56 2008
+
+
+.PARAM         res=50 
+
+** Analysis setup **
+.ac LIN 10001 1meg 100meg
+.STEP  PARAM res LIST 
++ 10 30 50 100 400
+.OP 
+
+
+* From [PSPICE NETLIST] section of D:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "BroadbandPowerAmp.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

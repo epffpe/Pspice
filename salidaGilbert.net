@@ -1,0 +1,22 @@
+* Schematics Netlist *
+
+
+
+V_V2         Vcc 0 5V
+Q_Q1         out1 $N_0001 $N_0002 BC547C 
+Q_Q4         out2 $N_0001 $N_0003 BC547C 
+I_I1         $N_0002 0 DC 1mA  
+I_I2         $N_0003 0 DC 1mA  
+L_L4         out1 Vcc  10uH  
+L_L5         out2 Vcc  10uH  
+R_R7         $N_0005 $N_0004  1k  
+R_R8         0 $N_0004  1k  
+V_V6         $N_0005 0 5V
+Q_Q2         out2 $N_0004 $N_0002 BC547C 
+Q_Q3         out1 $N_0004 $N_0003 BC547C 
+C_C1         0 $N_0004  100n  
+C_C2         $N_0001 $N_0006  100n  
+V_Port         $N_0007 0 DC 0 AC 1
++SIN 0 10m 16meg 0 0 0
+R_R1         $N_0004 $N_0001  50  
+R_R11         $N_0006 $N_0007  1k  

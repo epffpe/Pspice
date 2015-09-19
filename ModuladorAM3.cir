@@ -1,0 +1,24 @@
+* D:\Designs\Pspice\ModuladorAM3.sch
+
+* Schematics Version 9.2
+* Wed Dec 17 20:40:15 2008
+
+
+.PARAM         Lp2=28.8u Ls2=5u cap=68p
+.PARAM         Lp1=20u Ls1=5u res=10
+
+** Analysis setup **
+.tran 0ns 60us 0.5u 1n
+.OP 
+
+
+* From [PSPICE NETLIST] section of D:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "ModuladorAM3.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
